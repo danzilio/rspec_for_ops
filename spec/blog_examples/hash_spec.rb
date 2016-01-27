@@ -1,4 +1,4 @@
-require 'shared_contexts/hash_contexts'
+require 'blog_examples/shared_contexts/hash_contexts'
 
 describe Hash do
   let(:subject) {{ :foo => 'bar', :baz => baz_val }}
