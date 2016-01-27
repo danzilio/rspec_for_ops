@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe 'Truthiness' do
   let(:subject) { true }
 

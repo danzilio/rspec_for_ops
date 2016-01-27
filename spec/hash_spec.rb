@@ -1,10 +1,10 @@
+require 'shared_contexts/hash_contexts'
+
 describe Hash do
   let(:subject) {{ :foo => 'bar', :baz => baz_val }}
   let(:baz_val) { nil }
 
-  it 'should have the foo key set to bar' do
-    expect(subject[:foo]).to eq 'bar'
-  end
+  include_context 'foo should always be set to bar'
 
   it 'should have the baz key set to nil' do
     expect(subject[:baz]).to be nil
@@ -12,6 +12,7 @@ describe Hash do
 
   context 'with baz_val set to qux' do
     let(:baz_val) { 'qux' }
+    include_context 'foo should always be set to bar'
     it 'should have the baz key set to qux' do
       expect(subject[:baz]).to eq 'qux'
     end
@@ -19,6 +20,7 @@ describe Hash do
 
   context 'with baz_val set to quux' do
     let(:baz_val) { 'quux' }
+    include_context 'foo should always be set to bar'
     it 'should have the baz key set to quux' do
       expect(subject[:baz]).to eq 'quux'
     end
